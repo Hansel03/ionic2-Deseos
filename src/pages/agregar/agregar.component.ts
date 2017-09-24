@@ -17,6 +17,13 @@ export class AgregarComponent implements OnInit {
 
     ngOnInit() { }
 
+
+    /**
+     * Funcion que agrega los items al array
+     * 
+     * @returns 
+     * @memberof AgregarComponent.agregar
+     */
     agregar() {
         if (this.item === '' || this.item === undefined) {
             return;
@@ -28,5 +35,15 @@ export class AgregarComponent implements OnInit {
 
         this.items.push(item);
         this.item = '';
+    }
+    /**
+     * Eliminar un item de la lista
+     * 
+     * @param {number} id 
+     * @memberof AgregarComponent.eliminar
+     */
+    eliminar(id: number) {
+        console.log(id);
+        this.items.splice(id, 1);
     }
 }
