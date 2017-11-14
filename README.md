@@ -24,3 +24,10 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+
+Run you App
+
+```bash
+$ ionic serve
+```
+

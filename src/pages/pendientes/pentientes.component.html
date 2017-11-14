@@ -10,10 +10,9 @@
 <ion-card *ngFor="let lista of _listaDeseo.listas">
 
   <ion-item>
-    boton!!
+      <h2 [innerHtml]="lista.nombre"></h2>
   </ion-item>
 
-  <h2 [innerHtml]="lista.nombre"></h2>
   <hr>
   <ion-list>
     <ion-item>
