@@ -73,7 +73,11 @@ export class AgregarComponent implements OnInit {
         let lista = new Lista(this.titulo);
         lista.items = this.items;
         /**Agregamos al servicio de listas el array de las listas */
-        this._listaDeseos.listas.push(lista);
+        // this._listaDeseos.listas.push(lista);
+
+        //agregamos al array y guardamos en local storage
+        this._listaDeseos.agregarLista(lista);
+
         /** Nos devolvemos a la pantalla anterior del inicio */
         this.navCtrl.pop();
 
