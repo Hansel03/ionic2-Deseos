@@ -29,7 +29,6 @@ export class ListaDeseoService {
      * @memberof ListaDeseoService.actualizarData
      */
     actualizarData() {
-        debugger;
         //guardar en local storage
         localStorage.setItem("data", JSON.stringify(this.listas));
     }
@@ -48,10 +47,9 @@ export class ListaDeseoService {
      * Funcion para agregar la lista al array de listas del home
      * 
      * @param {Lista} lista 
-     * @memberof ListaDeseoService
+     * @memberof ListaDeseoService.agregarLista
      */
     agregarLista(lista: Lista) {
-        debugger;
         this.listas.push(lista);
         this.actualizarData();
     }
