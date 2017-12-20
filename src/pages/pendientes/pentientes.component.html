@@ -7,7 +7,7 @@
 <ion-content padding>
 
 <!--componente cards-->
-<ion-card *ngFor="let lista of _listaDeseo.listas | pendientes; let i = index">
+<ion-card *ngFor="let lista of _listaDeseo.listas | pendientes:false; let i = index">
 
   <ion-item (click)="verDetalle(lista, i)">
       <h2 [innerHtml]="lista.nombre"></h2>

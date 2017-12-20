@@ -8,7 +8,7 @@ import { Lista } from '../clases/listas';
 })
 
 export class PendientesPipe implements PipeTransform {
-    transform(listas: Lista[], estado: boolean = false): Lista[] {
+    transform(listas: Lista[], estado: boolean): Lista[] {
 
         let nuevaLista: Lista[] = [];
 
