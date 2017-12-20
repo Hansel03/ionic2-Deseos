@@ -32,6 +32,7 @@ export class ListaDeseoService {
         //guardar en local storage
         localStorage.setItem("data", JSON.stringify(this.listas));
     }
+
     /**
      * Funcion para cargar las listas desde localStorage
      * 
@@ -51,6 +52,17 @@ export class ListaDeseoService {
      */
     agregarLista(lista: Lista) {
         this.listas.push(lista);
+        this.actualizarData();
+    }
+
+    /**
+     * Funcion que elimina la lista de nuestro arreglo
+     * recibiendo como parametro en index, de la posicion a eliminar
+     * @param {number} idx 
+     * @memberof ListaDeseoService.eliminarLista
+     */
+    eliminarLista(idx: number) {
+        this.listas.splice(idx, 1);
         this.actualizarData();
     }
 

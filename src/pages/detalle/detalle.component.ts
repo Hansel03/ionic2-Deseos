@@ -34,27 +34,41 @@ export class DetalleComponent implements OnInit {
      * @param {ListaItem} item 
      * @memberof DetalleComponent.actualizar
     / */
-    actualizar(item) {
+    actualizar(item: ListaItem) {
         item.completado = !item.completado;
+        //variable bandera para saber si se marcaron todos los items
+        let todosMarcados = true;
+        //recorremos todos los items para saber cuales estan completados
+        for (let item of this.lista.items) {
+            if (!item.completado) {
+                todosMarcados = false;
+                break;
+            }
+        }
+
+        this.lista.terminado = todosMarcados;
 
         this._listaDeseos.actualizarData();
     }
 
+
+    /**
+     * Funcion para borrar abrir un modal de confirmacion
+     * y borrar la lista seleccionada
+     * @memberof DetalleComponent.borrarItem
+     */
     borrarItem() {
         let confirm = this.alertCtrl.create({
-            title: 'Borrar Lista',
-            message: '¿Está seguro que desea eliminar esta lista?',
-            buttons: [
+            title: this.lista.nombre,
+            message: '¿Está seguro que desea eliminar la lista?',
+            buttons: ['Cancelar',
                 {
-                    text: 'NO',
+                    text: 'Eliminar',
                     handler: () => {
-                        console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'SI',
-                    handler: () => {
-                        console.log('Agree clicked');
+                        //Metodo que elimina la lista
+                        this._listaDeseos.eliminarLista(this.idx);
+                        //Volvemos a la pantalla anterior
+                        this.navCtrl.pop();
                     }
                 }
             ]
