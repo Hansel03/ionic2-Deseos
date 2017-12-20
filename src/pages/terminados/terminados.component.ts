@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaDeseoService } from '../../app/services/lista-deseos.services';
-import { AgregarComponent } from '../agregar/agregar.component';
 import { DetalleComponent } from '../detalle/detalle.component';
 // importamos el elemento para la navegacion
 import { NavController } from 'ionic-angular';
@@ -18,16 +17,6 @@ export class TerminadosComponent implements OnInit {
 
     ngOnInit() { }
 
-    /**
-     * Funcion qu redirecciona a la pantalla de agregar
-     * 
-     * @memberof PentientesComponent.irAgregar
-     */
-    irAgregar() {
-        // aqui indicamos hacia donde queremos redirigir
-        // debemos importar el componente destino
-        this.navCtrl.push(AgregarComponent)
-    }
 
     /**
      * 

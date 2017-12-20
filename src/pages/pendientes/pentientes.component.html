@@ -6,6 +6,15 @@
 
 <ion-content padding>
 
+  <ion-grid *ngIf="(_listaDeseo.listas | pendientes:false).length===0">
+    <ion-row>
+      <ion-col class="caja-vacia">
+        <ion-icon class="icono-grande" ios="ios-sunny" md="md-sunny"></ion-icon>
+        <p>No hay ninguna lista.</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 <!--componente cards-->
 <ion-card *ngFor="let lista of _listaDeseo.listas | pendientes:false; let i = index">
 

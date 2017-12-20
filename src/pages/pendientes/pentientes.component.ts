@@ -15,7 +15,9 @@ export class PentientesComponent implements OnInit {
 
     constructor(
         private _listaDeseo: ListaDeseoService,
-        private navCtrl: NavController) { }
+        private navCtrl: NavController) {
+        console.log(_listaDeseo);
+    }
 
     ngOnInit() { }
 
