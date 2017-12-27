@@ -18,7 +18,7 @@
 <!--componente cards-->
 <ion-card *ngFor="let lista of _listaDeseo.listas | pendientes:true; let i = index">
 
-  <ion-item (click)="verDetalle(lista, i)">
+  <ion-item (click)="verDetalle(lista)">
       <h2 [innerHtml]="lista.nombre"></h2>
       <ion-note item-right>
         {{lista.items.length}} items
@@ -28,7 +28,7 @@
   <hr>
   <ion-list>
     <!--El "| slice:0:2" indica que solo mostrará 2 items-->
-    <ion-item (click)="verDetalle(lista, i)" 
+    <ion-item (click)="verDetalle(lista)" 
     *ngFor="let item of lista.items | slice:0:2">
         <ion-icon *ngIf="!item.completado" ios="ios-square-outline" md="md-square-outline"></ion-icon>
         <ion-icon *ngIf="item.completado" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>

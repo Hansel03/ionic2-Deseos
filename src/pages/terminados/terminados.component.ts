@@ -25,7 +25,16 @@ export class TerminadosComponent implements OnInit {
      * @param {number} idx 
      * @memberof PentientesComponent.verDetalle
      */
-    verDetalle(lista, idx) {
+    verDetalle(lista) {
+        let idx: number;
+        // recorremos todas las listas para obtener 
+        // el index de la lista del detalle
+        this._listaDeseo.listas.forEach((element, i) => {
+            if (JSON.stringify(lista) === JSON.stringify(element)) {
+                idx = i;
+            }
+        });
+
         // aqui indicamos hacia donde queremos redirigir
         // debemos importar el componente destino
         //con las {} indicamos que esa pantalla va a recibir parametros
